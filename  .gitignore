@@ -7,7 +7,7 @@ yarn-error.log*
 pnpm-debug.log*
 
 # Diretórios de dependências
-node_modules/*
+node_modules/
 
 # Compilação de saída
 dist/
@@ -49,3 +49,7 @@ Thumbs.db
 
 # Pasta temporária do Docker
 docker-compose.override.yml
+
+# Arquivos de configuração do Lint e Prettier
+eslint*
+prettier*
