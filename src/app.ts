@@ -1,6 +1,6 @@
 import express from 'express';
 
-class App {
+export class App {
   public app: express.Express;
 
   constructor() {
