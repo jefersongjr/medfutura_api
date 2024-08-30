@@ -10,7 +10,7 @@ services:
     volumes:
       - ./app:/app
     environment:
-      DATABASE_URL: postgres://user:password@db:5432/mydatabase
+      DATABASE_URL: postgres://user:password@db:5432/shopper_db
       GEMINI_API_KEY: ${GEMINI_API_KEY}
     depends_on:
       - db
@@ -29,11 +29,11 @@ services:
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: mydatabase
+      POSTGRES_DB: shopper_db
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U mydatabase"]
+      test: ["CMD-SHELL", "pg_isready -U shopper_db"]
       interval: 30s
       timeout: 10s
       retries: 5
