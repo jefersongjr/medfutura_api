@@ -15,7 +15,7 @@ services:
     depends_on:
       - db
     working_dir: /app
-    command: npm run dev
+    command: npm run start
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3001/health"]
       interval: 30s
@@ -31,7 +31,7 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: shopper_db
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U shopper_db"]
       interval: 30s
